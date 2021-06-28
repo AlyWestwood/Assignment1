@@ -60,4 +60,8 @@ public class Account {
             System.out.println("There was an error.");
         }
     }
+
+    public void testMethod(){
+        //test method for github
+    }
 }
