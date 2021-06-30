@@ -23,12 +23,12 @@ public class Account {
         confirmation(true);
     }
 
-    public void withdrawMoney(double amount){
+    public void withdrawMoney(double amount) throws AccountWithException{
         if(this.balance - amount >= minimumBalance){
             this.balance = this.balance - amount;
             confirmation(true);
         } else {
-            confirmation(false);
+            throw new AccountWithException(amount);
         }
     }
 
@@ -60,5 +60,4 @@ public class Account {
             System.out.println("There was an error.");
         }
     }
-// test method removed
 }

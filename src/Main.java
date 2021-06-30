@@ -1,23 +1,26 @@
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
 
         Account one = new Account();
         DoubleAccount two = new DoubleAccount();
         SavingsAccount three = new SavingsAccount();
         CurrentAccount four = new CurrentAccount();
 
-        System.out.println("-" + one.getNumber() + two.getNumber() + three.getNumber() + four.getNumber() + "-");
+        /*System.out.println("-" + one.getNumber() + two.getNumber() + three.getNumber() + four.getNumber() + "-");
         System.out.println(one.toString() + "\n" + two.toString() +"\n" + three.toString() + "\n" + four.toString());
-
+*/
         //Account
         System.out.println("\nAccount Test:\n-------------------");
         one.depositMoney(100);
-        one.withdrawMoney(55);
-        one.withdrawMoney(50);
+        try{
+            one.withdrawMoney(55);
+            one.withdrawMoney(50);
+        } catch(AccountWithException e){
+            System.out.println("Funds insufficient");}
         System.out.println(one.toString());
 
-        //Double Account
+        /*Double Account
         System.out.println("\nDouble Account Test:\n-------------------");
         two.depositMoney(100);
         two.withdrawMoney(55);
@@ -47,6 +50,6 @@ public class Main {
         System.out.println("Overdraft limit: $" + four.getOverdraftLimit());
         four.setOverdraftLimit(5.0);
         four.withdrawMoney(45);
-        System.out.println(four.toString());
+        System.out.println(four.toString());*/
     }
 }
